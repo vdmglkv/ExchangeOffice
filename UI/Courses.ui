@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Client</class>
- <widget class="QMainWindow" name="Client">
+ <class>Courses</class>
+ <widget class="QMainWindow" name="Courses">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,83 +14,10 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>210</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Amount</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>50</y>
-      <width>20</width>
-      <height>391</height>
-     </rect>
-    </property>
-    <property name="mouseTracking">
-     <bool>false</bool>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>60</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Currency from</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>10</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Exchange Office</string>
-    </property>
-   </widget>
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>40</y>
       <width>571</width>
       <height>20</height>
@@ -100,36 +27,61 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="ConvertButton">
+   <widget class="QPushButton" name="ChequeButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>360</y>
-      <width>111</width>
+      <x>290</x>
+      <y>400</y>
+      <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Convert</string>
+     <string>Exit</string>
     </property>
    </widget>
-   <widget class="Line" name="line_4">
+   <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>50</y>
-      <width>20</width>
-      <height>391</height>
+      <x>150</x>
+      <y>240</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sale</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>47</x>
+      <y>430</y>
+      <width>571</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>290</x>
       <y>140</y>
       <width>101</width>
       <height>20</height>
@@ -148,39 +100,23 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="Line" name="line_3">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>27</x>
-      <y>430</y>
-      <width>571</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ChequeButton">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>400</y>
-      <width>111</width>
-      <height>28</height>
+      <x>290</x>
+      <y>10</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cheque</string>
+     <string>Exchange Office</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>150</x>
       <y>100</y>
       <width>370</width>
       <height>30</height>
@@ -205,7 +141,7 @@
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>150</x>
       <y>170</y>
       <width>370</width>
       <height>30</height>
@@ -227,30 +163,17 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="Courses">
+   <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>10</y>
-      <width>101</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Exchange rates</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>290</y>
+      <x>290</x>
+      <y>60</y>
       <width>101</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>You get</string>
+     <string>Currency from</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -262,12 +185,76 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLineEdit" name="Get">
+   <widget class="Line" name="line_4">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>320</y>
-      <width>113</width>
+      <x>610</x>
+      <y>50</y>
+      <width>20</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>50</y>
+      <width>20</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>360</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>240</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Purchase</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="SaledoubleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>270</y>
+      <width>62</width>
       <height>22</height>
      </rect>
     </property>
@@ -275,14 +262,17 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="Amount">
+   <widget class="QDoubleSpinBox" name="PurchasedoubleSpinBox">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>250</y>
-      <width>113</width>
+      <x>420</x>
+      <y>270</y>
+      <width>62</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

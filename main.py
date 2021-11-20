@@ -1,24 +1,20 @@
-from PyQt5 import QtWidgets, QtGui, QtCore
-from qlabel import Ui_MainWindow
+from PyQt5 import QtWidgets
+from UI import MainWindow, Cheque, Client, Statistic, Settings, Courses
 import sys
 
 
 class mywindow(QtWidgets.QMainWindow):
-
     def __init__(self):
         super(mywindow, self).__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = MainWindow.Ui_MainWindow()
+        # self.ui = Settings.Ui_Settings()
+        # self.ui = Client.Ui_Client()
+        # self.ui = Cheque.Ui_Cheque()
+        # self.ui = Statistic.Ui_Statistic()
+        # self.ui = Courses.Ui_Courses()
+
         self.ui.setupUi(self)
-
-        self.ui.label.setFont(
-            QtGui.QFont('SansSerif', 30)
-        )
-
-        self.ui.label.setGeometry(
-            QtCore.QRect(10, 10, 200, 200)
-        )
-
-        self.ui.label.setText("PyScripts")  # Меняем текст
+        # self.ui.Password.setEchoMode(QtWidgets.QLineEdit.Password)
 
 
 app = QtWidgets.QApplication([])
