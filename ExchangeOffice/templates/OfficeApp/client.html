@@ -1,3 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Client{% endblock title %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+            <p>Hi admin {{ user.username }}!</p>
+        {% else %}
+            <p>Hi {{ user.username }}!</p>
+        {% endif %}
+    {% else %}
+        <p>You are not logged in.</p>
+    {% endif %}
+{% endblock content %}
 {% block header %}Main{% endblock header %}
