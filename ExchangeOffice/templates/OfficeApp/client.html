@@ -6,10 +6,11 @@
             <p>Hi admin {{ user.username }}!</p>
         {% else %}
             <p>Hi {{ user.username }}!</p>
-        {% endif %}
-        <p>Balance: {{user.profile.balance.USD}} USD
+            <p>Balance: {{user.profile.balance.USD}} USD
                     {{user.profile.balance.EUR}} EUR
                     {{user.profile.balance.BYN}} BYN </p>
+        {% endif %}
+
         <button type="button" onclick="window.location.href = 'http://127.0.0.1:8000/accounts/logout/';" class="btn btn-outline-dark me-2">Logout</button>
     {% else %}
         <p>You are not logged in.</p>

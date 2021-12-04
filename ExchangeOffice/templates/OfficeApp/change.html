@@ -1,3 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 {% block title %}Change{% endblock title %}
-{% block header %}Main{% endblock header %}
+{% block content %}
+    {% if user.is_authenticated %}
+
+        <div class="convert">
+                <p>Press 'enter' key to check convert information!</p>
+                <p>Евро в рублях: <span class="eur-in-rub">0 BYN</span></p>
+                <p>Евро: <input type="text" class="eur-input"></p>
+                <p>Доллар в рублях: <span class="usd-in-rub">0 BYN</span></p>
+                <p>Доллар: <input type="text" class="usd-input"></p>
+                <p>Press 'convert' button to admit convertation!</p>
+                <button type="button" onclick="" class="btn btn-outline-dark me-2">Convert</button>
+            <script src="{% static 'js/script.js' %}"></script>
+        </div>
+
+    {% else %}
+        <p>You are not logged in.</p>
+    {%  endif %}
+{% endblock content %}
