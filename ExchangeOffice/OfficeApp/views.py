@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.contrib.auth import get_user
 from .models import Operation
 from .forms import Convert
@@ -19,10 +19,13 @@ def change(request):
     if request.method == 'POST':
         form = Convert(request.POST)
         if form.is_valid():
-            user = get_user(request)
-            operation = Operation.objects.create(user_id=user.id, value_in=1, value_out=1)
-            operation.save()
-            return HttpResponseRedirect('/change_done/')
+            try:
+                user = get_user(request)
+                operation = Operation.objects.create(**form.cleaned_data, user_id=user.id)
+                operation.save()
+                return HttpResponseRedirect('/change_done/')
+            except:
+                form.add_error(None, 'Ошибка при конвертации.')
     else:
         form = Convert()
     return render(request, "OfficeApp/change.html", {'form': form})
