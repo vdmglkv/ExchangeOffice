@@ -9,8 +9,9 @@
             <p>Balance: {{user.profile.balance.USD}} USD
                     {{user.profile.balance.EUR}} EUR
                     {{user.profile.balance.BYN}} BYN </p>
+            <img class="w-50 mx-auto d-block" src="../../media/{{user.profile.photo}}" alt="photo">
         {% endif %}
-
+<button type="button" onclick="window.location.href = 'http://127.0.0.1:8000/accounts/edit/';" class="btn btn-outline-dark me-2">Edit</button>
         <button type="button" onclick="window.location.href = 'http://127.0.0.1:8000/accounts/logout/';" class="btn btn-outline-dark me-2">Logout</button>
     {% else %}
         <p>You are not logged in.</p>
