@@ -1,10 +1,9 @@
-from django.http import HttpResponseRedirect
+from datetime import datetime
+from .converter import get_pair_rates
 from django.shortcuts import render
 from django.contrib.auth import get_user
 from .models import Operation
 from .forms import Convert
-
-# Create your views here.
 
 
 def main(request):
@@ -21,10 +20,20 @@ def change(request):
         if form.is_valid():
             try:
                 user = get_user(request)
-                operation = Operation.objects.create(**form.cleaned_data, user_id=user.id)
+                operation = Operation.objects.create(From=form.cleaned_data['From'],
+                                                     value=form.cleaned_data['value'],
+                                                     To=form.cleaned_data['To'],
+                                                     result=form.cleaned_data['value'] * get_pair_rates(
+                                                         form.cleaned_data['From'],
+                                                         form.cleaned_data['To']),
+                                                     user_id=user.id)
                 operation.save()
-                return HttpResponseRedirect('/change_done/')
-            except:
+                return render(request, "OfficeApp/convert_done.html",
+                              {'form': form, 'data': datetime.now,
+                               'convert': form.cleaned_data['value'] * get_pair_rates(form.cleaned_data['From'],
+                                                                                      form.cleaned_data['To'])})
+            except Exception as ex:
+                print(ex)
                 form.add_error(None, 'Ошибка при конвертации.')
     else:
         form = Convert()

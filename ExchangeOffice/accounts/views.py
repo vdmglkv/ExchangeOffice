@@ -33,9 +33,9 @@ def edit(request):
             user_form.save()
             profile_form.save()
             return render(request,
-                      'accounts/edit.html',
-                      {'user_form': user_form,
-                       'profile_form': profile_form})
+                          'accounts/edit.html',
+                          {'user_form': user_form,
+                           'profile_form': profile_form})
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
