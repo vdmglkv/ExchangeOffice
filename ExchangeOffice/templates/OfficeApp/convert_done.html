@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Convert{% endblock %}
+
+{% block content %}
+<table>
+    {% with from=form.cleaned_data.From value=form.cleaned_data.value to=form.cleaned_data.To %}
+        <tr>
+          <th>Fields</th>
+          <th>Deal information</th>
+          </tr>
+         <tr>
+          <td>Client</td>
+          <td>{{user.username}}</td>
+         </tr>
+        <tr>
+          <td>From</td>
+          <td>{{from}}</td>
+         </tr>
+        <tr>
+          <td>Value</td>
+          <td>{{value}}</td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td>{{to}}</td>
+         </tr>
+        <tr>
+          <td>Result</td>
+          <td>{{convert}}</td>
+         </tr>
+        <tr>
+          <td>Date</td>
+          <td>{{data}}</td>
+         </tr>
+        </table>
+{% endwith %}
+    <p>Successfully converted.</p>
+{% endblock %}

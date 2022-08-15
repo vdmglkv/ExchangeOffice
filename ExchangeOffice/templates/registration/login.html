@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Log-in{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <p>You are already login</p>
+    <button type="button" onclick="window.location.href = 'http://127.0.0.1:8000/accounts/logout/';" class="btn btn-outline-dark me-2">Logout</button>
+{% else %}
+    <h1>Log-in</h1>
+    <p>Please, use the following form to log-in. If you don't have an account <a href="{% url 'register'%}">register here</a></p>
+    <form action="." method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Log-in"></p>
+    </form>
+{% endif %}
+{% endblock %}
